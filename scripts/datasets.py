@@ -298,11 +298,16 @@ def select(identifier=None):
     metadata["lighting"] = json.loads(solar_path.read_text())
     direction = metadata["lighting"]["static_direction"]["direction_local_z_up"]
     schematic = (ROOT / "assets/schematics/main.kdl").read_text()
+    with (ROOT / metadata["csv"]).open() as stream:
+        first_pose = next(csv.DictReader(stream))
+    flight_date = datetime.fromtimestamp(float(first_pose["source_unix_s"]), UTC)
+    date_label = flight_date.strftime("%d %b %Y")
     schematic = re.sub(
-        r"MARS 2020 · INGENUITY · FLIGHT \d+ · SOL \d+",
-        f"MARS 2020 · INGENUITY · FLIGHT {metadata['flight']:02} · SOL {metadata['sol']}",
+        r"INGENUITY · FLIGHT \d+ · [^|\"]+ · SOL \d+",
+        f"INGENUITY · FLIGHT {metadata['flight']:02} · {date_label.upper()} · SOL {metadata['sol']}",
         schematic,
     )
+    schematic = re.sub(r'Ingenuity / [^"\n]+', f"Ingenuity / {date_label}", schematic)
     if metadata.get("flight") != 59:
         schematic = schematic.replace("mars_flight59_terrain.glb", "mars_close_terrain.glb")
         schematic = schematic.replace('"(0,0,0,1,0,0,-0.4)"', '"(0,0,0,1,0,0,0.6)"')

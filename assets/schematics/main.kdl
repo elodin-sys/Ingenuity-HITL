@@ -8,9 +8,9 @@ environment {
     ambient scale=0.3
     sky color="(24,18,17)"
 }
-vsplit name="Ingenuity / Mars 2020" {
+vsplit name="Ingenuity / 16 Sep 2023" {
     hsplit share=0.84 {
-        viewport name="MARS 2020 · INGENUITY · FLIGHT 59 · SOL 915 | CYAN NASA · ORANGE MC" share=0.73 active=#true near=0.03 fov=43 hdr=#true ev100=13.5 show_grid=#false show_view_cube=#true pos="display.world_pos.translate_world(4.5,-5.5,3.5)" look_at="display.world_pos.translate_world(0,0,-1.3)" up="(0,0,1)" {
+        viewport name="INGENUITY · FLIGHT 59 · 16 SEP 2023 · SOL 915 | CYAN NASA · ORANGE MC" share=0.73 active=#true near=0.03 fov=43 hdr=#true ev100=13.5 show_grid=#false show_view_cube=#true pos="display.world_pos.translate_world(4.5,-5.5,3.5)" look_at="display.world_pos.translate_world(0,0,-1.3)" up="(0,0,1)" {
             bloom preset="old_school" intensity=0.12 threshold=1.0
         }
         sensor_view "navcam.gray" name="NAVCAM · SIMULATED · 10 FPS" share=0.27
