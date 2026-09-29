@@ -1,0 +1,773 @@
+{
+  "source": "https://pds-imaging.jpl.nasa.gov/api",
+  "retrieved_utc": "2026-09-29T20:54:27.543661+00:00",
+  "inventory_provenance": {
+    "url": "https://pds-imaging.jpl.nasa.gov/api/search/atlas/_search?source=%7B%22size%22%3A+0%2C+%22track_total_hits%22%3A+true%2C+%22query%22%3A+%7B%22bool%22%3A+%7B%22filter%22%3A+%5B%7B%22term%22%3A+%7B%22bundle_id%22%3A+%22mars2020_helicam%22%7D%7D%2C+%7B%22term%22%3A+%7B%22collection_id%22%3A+%22data%22%7D%7D%2C+%7B%22wildcard%22%3A+%7B%22archive.name%22%3A+%22HNM%2AEDR%2A.xml%22%7D%7D%5D%7D%7D%2C+%22aggs%22%3A+%7B%22sols%22%3A+%7B%22terms%22%3A+%7B%22field%22%3A+%22archive.parent_uri%22%2C+%22size%22%3A+512%7D%2C+%22aggs%22%3A+%7B%22sample%22%3A+%7B%22top_hits%22%3A+%7B%22size%22%3A+1%2C+%22sort%22%3A+%5B%7B%22archive.name%22%3A+%22asc%22%7D%5D%2C+%22_source%22%3A+%5B%22uri%22%2C+%22archive.name%22%5D%7D%7D%7D%7D%7D%7D&source_content_type=application%2Fjson",
+    "sha256": "e4dd9a4912c73fed15aa85bd742348f65ae038a1399d851a0a2d07c0cc6c40d1",
+    "bytes": 53042,
+    "retrieved_utc": "2026-09-29T20:54:27.541639+00:00"
+  },
+  "entries": [
+    {
+      "id": "sol00043",
+      "sol": 43,
+      "flight_hint": 0,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00043/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00043/ids/edr/heli/HNM_0043_0670751664_181EDR_N0000001HELI00000_0000LUJ05.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00047",
+      "sol": 47,
+      "flight_hint": 0,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00047/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00047/ids/edr/heli/HNM_0047_0671111075_005EDR_N0000001HELI00053_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00048",
+      "sol": 48,
+      "flight_hint": 0,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00048/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00048/ids/edr/heli/HNM_0048_0671201709_228EDR_N0000001HELI00053_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00061",
+      "sol": 61,
+      "flight_hint": 2,
+      "labels": 17,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00061/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00061/ids/edr/heli/HNM_0061_0672355850_515EDR_N0020001HELI00485_0000A0J03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00064",
+      "sol": 64,
+      "flight_hint": 3,
+      "labels": 24,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00064/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00064/ids/edr/heli/HNM_0064_0672622215_579EDR_N0030001HELI01727_0000LUJ04.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00069",
+      "sol": 69,
+      "flight_hint": 4,
+      "labels": 62,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00069/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00069/ids/edr/heli/HNM_0069_0673066088_962EDR_N0040001HELI01722_0000LUJ05.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00076",
+      "sol": 76,
+      "flight_hint": 5,
+      "labels": 128,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00076/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00076/ids/edr/heli/HNM_0076_0673687479_098EDR_N0050001HELI00722_0000LUJ04.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00107",
+      "sol": 107,
+      "flight_hint": 7,
+      "labels": 72,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00107/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00107/ids/edr/heli/HNM_0107_0676439499_704EDR_N0070001HELI00866_0000LUJ05.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00133",
+      "sol": 133,
+      "flight_hint": 9,
+      "labels": 193,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00133/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00133/ids/edr/heli/HNM_0133_0678747608_620EDR_N0090001HELI00488_0000LUJ06.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00174",
+      "sol": 174,
+      "flight_hint": 12,
+      "labels": 197,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00174/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00174/ids/edr/heli/HNM_0174_0682390500_075EDR_N0120001HELI00488_0000LUJ04.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00204",
+      "sol": 204,
+      "flight_hint": 13,
+      "labels": 2,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00204/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00204/ids/edr/heli/HNM_0204_0685045539_651EDR_N0130001HELI00052_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00211",
+      "sol": 211,
+      "flight_hint": 13,
+      "labels": 2,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00211/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00211/ids/edr/heli/HNM_0211_0685666364_209EDR_N0130001HELI00053_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00236",
+      "sol": 236,
+      "flight_hint": 13,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00236/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00236/ids/edr/heli/HNM_0236_0687886094_623EDR_N0130001HELI00053_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00240",
+      "sol": 240,
+      "flight_hint": 13,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00240/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00240/ids/edr/heli/HNM_0240_0688259312_813EDR_N0130001HELI00053_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00254",
+      "sol": 254,
+      "flight_hint": 15,
+      "labels": 190,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00254/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00254/ids/edr/heli/HNM_0254_0689487531_304EDR_N0150001HELI00506_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00268",
+      "sol": 268,
+      "flight_hint": 16,
+      "labels": 184,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00268/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00268/ids/edr/heli/HNM_0268_0690732221_586EDR_N0160001HELI00488_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00282",
+      "sol": 282,
+      "flight_hint": 17,
+      "labels": 192,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00282/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00282/ids/edr/heli/HNM_0282_0691978767_260EDR_N0170001HELI00496_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00297",
+      "sol": 297,
+      "flight_hint": 18,
+      "labels": 4,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00297/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00297/ids/edr/heli/HNM_0297_0693301555_708EDR_N0180001HELI00142_0000A0J02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00316",
+      "sol": 316,
+      "flight_hint": 18,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00316/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00316/ids/edr/heli/HNM_0316_0694987695_538EDR_N0180001HELI00141_0000A0J02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00338",
+      "sol": 338,
+      "flight_hint": 18,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00338/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00338/ids/edr/heli/HNM_0338_0696944779_214EDR_N0180001HELI00154_0000A0J02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00375",
+      "sol": 375,
+      "flight_hint": 21,
+      "labels": 191,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00375/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00375/ids/edr/heli/HNM_0375_0700221777_418EDR_N0210001HELI00506_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00384",
+      "sol": 384,
+      "flight_hint": 22,
+      "labels": 181,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00384/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00384/ids/edr/heli/HNM_0384_0701020745_065EDR_N0220001HELI00488_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00414",
+      "sol": 414,
+      "flight_hint": 26,
+      "labels": 192,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00414/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00414/ids/edr/heli/HNM_0414_0703689840_866EDR_N0260001HELI00470_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00418",
+      "sol": 418,
+      "flight_hint": 27,
+      "labels": 181,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00418/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00418/ids/edr/heli/HNM_0418_0704044937_047EDR_N0270001HELI00470_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00423",
+      "sol": 423,
+      "flight_hint": 28,
+      "labels": 180,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00423/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00423/ids/edr/heli/HNM_0423_0704489736_955EDR_N0280001HELI00470_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00527",
+      "sol": 527,
+      "flight_hint": 29,
+      "labels": 2,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00527/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00527/ids/edr/heli/HNM_0527_0713730826_471EDR_N0290001HELI00030_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00550",
+      "sol": 550,
+      "flight_hint": 31,
+      "labels": 188,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00550/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00550/ids/edr/heli/HNM_0550_0715778608_669EDR_N0310001HELI00488_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00612",
+      "sol": 612,
+      "flight_hint": 33,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00612/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00612/ids/edr/heli/HNM_0612_0721275301_141EDR_N0330001HELI00147_0000A0J01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00625",
+      "sol": 625,
+      "flight_hint": 34,
+      "labels": 62,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00625/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00625/ids/edr/heli/HNM_0625_0722439881_489EDR_N0340001HELI00488_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00635",
+      "sol": 635,
+      "flight_hint": 35,
+      "labels": 157,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00635/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00635/ids/edr/heli/HNM_0635_0723327427_966EDR_N0350001HELI00488_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00649",
+      "sol": 649,
+      "flight_hint": 37,
+      "labels": 146,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00649/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00649/ids/edr/heli/HNM_0649_0724569964_510EDR_N0370001HELI00492_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00663",
+      "sol": 663,
+      "flight_hint": 37,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00663/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00663/ids/edr/heli/HNM_0663_0725799918_202EDR_N0370001HELI00171_0000A0J01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00667",
+      "sol": 667,
+      "flight_hint": 38,
+      "labels": 194,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00667/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00667/ids/edr/heli/HNM_0667_0726167907_393EDR_N0380001HELI00496_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00673",
+      "sol": 673,
+      "flight_hint": 39,
+      "labels": 196,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00673/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00673/ids/edr/heli/HNM_0673_0726702921_225EDR_N0390001HELI00492_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00681",
+      "sol": 681,
+      "flight_hint": 40,
+      "labels": 192,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00681/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00681/ids/edr/heli/HNM_0681_0727411984_946EDR_N0400001HELI00498_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00689",
+      "sol": 689,
+      "flight_hint": 41,
+      "labels": 192,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00689/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00689/ids/edr/heli/HNM_0689_0728119071_533EDR_N0410001HELI00496_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00697",
+      "sol": 697,
+      "flight_hint": 42,
+      "labels": 196,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00697/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00697/ids/edr/heli/HNM_0697_0728829663_407EDR_N0420001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00708",
+      "sol": 708,
+      "flight_hint": 43,
+      "labels": 10,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00708/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00708/ids/edr/heli/HNM_0708_0729806055_405EDR_N0430001HELI04219_0000A0J01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00711",
+      "sol": 711,
+      "flight_hint": 44,
+      "labels": 190,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00711/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00711/ids/edr/heli/HNM_0711_0730072380_023EDR_N0440001HELI00506_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00714",
+      "sol": 714,
+      "flight_hint": 45,
+      "labels": 196,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00714/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00714/ids/edr/heli/HNM_0714_0730342462_287EDR_N0450001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00717",
+      "sol": 717,
+      "flight_hint": 46,
+      "labels": 192,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00717/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00717/ids/edr/heli/HNM_0717_0730605088_719EDR_N0460001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00729",
+      "sol": 729,
+      "flight_hint": 47,
+      "labels": 195,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00729/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00729/ids/edr/heli/HNM_0729_0731670382_942EDR_N0470001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00741",
+      "sol": 741,
+      "flight_hint": 48,
+      "labels": 193,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00741/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00741/ids/edr/heli/HNM_0741_0732732409_908EDR_N0480001HELI00502_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00752",
+      "sol": 752,
+      "flight_hint": 49,
+      "labels": 191,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00752/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00752/ids/edr/heli/HNM_0752_0733708438_287EDR_N0490001HELI00506_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00763",
+      "sol": 763,
+      "flight_hint": 50,
+      "labels": 193,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00763/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00763/ids/edr/heli/HNM_0763_0734684957_492EDR_N0500001HELI00506_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00772",
+      "sol": 772,
+      "flight_hint": 51,
+      "labels": 193,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00772/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00772/ids/edr/heli/HNM_0772_0735484936_618EDR_N0510001HELI00508_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00776",
+      "sol": 776,
+      "flight_hint": 52,
+      "labels": 195,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00776/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00776/ids/edr/heli/HNM_0776_0735839955_103EDR_N0520001HELI00506_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00852",
+      "sol": 852,
+      "flight_hint": 52,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00852/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00852/ids/edr/heli/HNM_0852_0742567460_732EDR_N0520001HELI00171_0000A0J01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00865",
+      "sol": 865,
+      "flight_hint": 54,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00865/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00865/ids/edr/heli/HNM_0865_0743721599_205EDR_N0540001HELI00171_0000A0J01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00872",
+      "sol": 872,
+      "flight_hint": 54,
+      "labels": 137,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00872/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00872/ids/edr/heli/HNM_0872_0744361844_830EDR_N0540001HELI00488_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00881",
+      "sol": 881,
+      "flight_hint": 55,
+      "labels": 190,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00881/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00881/ids/edr/heli/HNM_0881_0745152957_622EDR_N0550001HELI00502_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00894",
+      "sol": 894,
+      "flight_hint": 56,
+      "labels": 186,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00894/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00894/ids/edr/heli/HNM_0894_0746299630_878EDR_N0560001HELI00502_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00902",
+      "sol": 902,
+      "flight_hint": 57,
+      "labels": 186,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00902/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00902/ids/edr/heli/HNM_0902_0747017224_652EDR_N0570001HELI00508_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00910",
+      "sol": 910,
+      "flight_hint": 58,
+      "labels": 186,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00910/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00910/ids/edr/heli/HNM_0910_0747720820_651EDR_N0580001HELI00496_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00915",
+      "sol": 915,
+      "flight_hint": 59,
+      "labels": 180,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00915/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00915/ids/edr/heli/HNM_0915_0748163898_650EDR_N0590001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00924",
+      "sol": 924,
+      "flight_hint": 60,
+      "labels": 185,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00924/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00924/ids/edr/heli/HNM_0924_0748962869_050EDR_N0600001HELI00508_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00933",
+      "sol": 933,
+      "flight_hint": 61,
+      "labels": 182,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00933/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00933/ids/edr/heli/HNM_0933_0749765538_409EDR_N0610001HELI00508_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00940",
+      "sol": 940,
+      "flight_hint": 62,
+      "labels": 189,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00940/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00940/ids/edr/heli/HNM_0940_0750380660_896EDR_N0620001HELI00508_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00947",
+      "sol": 947,
+      "flight_hint": 63,
+      "labels": 196,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00947/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00947/ids/edr/heli/HNM_0947_0751002832_476EDR_N0630001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00955",
+      "sol": 955,
+      "flight_hint": 64,
+      "labels": 194,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00955/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00955/ids/edr/heli/HNM_0955_0751711674_501EDR_N0640001HELI00506_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00961",
+      "sol": 961,
+      "flight_hint": 65,
+      "labels": 181,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00961/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00961/ids/edr/heli/HNM_0961_0752245538_702EDR_N0650001HELI00490_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00962",
+      "sol": 962,
+      "flight_hint": 66,
+      "labels": 90,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00962/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00962/ids/edr/heli/HNM_0962_0752333091_050EDR_N0660001HELI00490_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol00990",
+      "sol": 990,
+      "flight_hint": 67,
+      "labels": 191,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00990/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/00990/ids/edr/heli/HNM_0990_0754819213_161EDR_N0670001HELI00506_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01003",
+      "sol": 1003,
+      "flight_hint": 68,
+      "labels": 182,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01003/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01003/ids/edr/heli/HNM_1003_0755972852_535EDR_N0680001HELI00502_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01007",
+      "sol": 1007,
+      "flight_hint": 69,
+      "labels": 182,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01007/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01007/ids/edr/heli/HNM_1007_0756327949_548EDR_N0690001HELI00502_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01009",
+      "sol": 1009,
+      "flight_hint": 70,
+      "labels": 186,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01009/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01009/ids/edr/heli/HNM_1009_0756505496_223EDR_N0700001HELI00506_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01027",
+      "sol": 1027,
+      "flight_hint": 71,
+      "labels": 2,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01027/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01027/ids/edr/heli/HNM_1027_0758103292_959EDR_N0710001HELI00026_0000LUJ04.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01040",
+      "sol": 1040,
+      "flight_hint": 72,
+      "labels": 3,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01040/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01040/ids/edr/heli/HNM_1040_0759257359_207EDR_N0720001HELI00030_0000LUJ03.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01043",
+      "sol": 1043,
+      "flight_hint": 72,
+      "labels": 14,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01043/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01043/ids/edr/heli/HNM_1043_0759508619_853EDR_N0720001HELI00054_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01044",
+      "sol": 1044,
+      "flight_hint": 72,
+      "labels": 1,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01044/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01044/ids/edr/heli/HNM_1044_0759617496_779EDR_N0720001HELI00052_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01048",
+      "sol": 1048,
+      "flight_hint": 72,
+      "labels": 164,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01048/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01048/ids/edr/heli/HNM_1048_0759963256_680EDR_N0720001HELI00166_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01052",
+      "sol": 1052,
+      "flight_hint": 72,
+      "labels": 328,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01052/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01052/ids/edr/heli/HNM_1052_0760318347_443EDR_N0720001HELI00084_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01055",
+      "sol": 1055,
+      "flight_hint": 72,
+      "labels": 656,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01055/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01055/ids/edr/heli/HNM_1055_0760585054_327EDR_N0720001HELI00312_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01059",
+      "sol": 1059,
+      "flight_hint": 72,
+      "labels": 716,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01059/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01059/ids/edr/heli/HNM_1059_0760939783_982EDR_N0720001HELI00002_0000LUJ02.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01064",
+      "sol": 1064,
+      "flight_hint": 72,
+      "labels": 330,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01064/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01064/ids/edr/heli/HNM_1064_0761383046_785EDR_N0720001HELI00166_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    },
+    {
+      "id": "sol01069",
+      "sol": 1069,
+      "flight_hint": 72,
+      "labels": 166,
+      "parent_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01069/ids/edr/heli",
+      "sample_uri": "atlas:pds4:mars_2020:perseverance:/mars2020_helicam/data/sol/01069/ids/edr/heli/HNM_1069_0761832295_226EDR_N0720001HELI00166_0000LUJ01.xml",
+      "kind": "archived_navigation_at_image_acquisition",
+      "status": "indexed; pose validation occurs on preparation"
+    }
+  ],
+  "scope": "All NAV EDR XML sol groups indexed in this PDS Atlas snapshot; not full flight logs"
+}

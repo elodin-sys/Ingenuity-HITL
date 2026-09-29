@@ -1,0 +1,164 @@
+{
+  "data/raw/flight-log.pdf": {
+    "url": "https://science.nasa.gov/wp-content/uploads/2024/06/ingenuity-helicopter-flight-log.pdf",
+    "sha256": "dcf0b9e59eb8cb805e484c17f9cab8d56b5a03ca92f2facf708be59c45bf4e11",
+    "bytes": 548273,
+    "retrieved_utc": "2026-09-29T20:12:18.714517+00:00"
+  },
+  "data/raw/WE__0058___________CAL_PS__________________P02.CSV": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0000_0089/sol_0058/WE__0058___________CAL_PS__________________P02.CSV",
+    "sha256": "56dda9aabcda7801acf21683568cff74ee8a13cd1a1eae80e58f2b7077aefbc0",
+    "bytes": 5349919,
+    "retrieved_utc": "2026-09-29T20:12:46.874270+00:00"
+  },
+  "data/raw/WE__0058___________CAL_PS__________________P02.xml": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0000_0089/sol_0058/WE__0058___________CAL_PS__________________P02.xml",
+    "sha256": "d6501199c09c3f0a65aa84c473a9eef2d7d785cfbf188bfcf2ea5dd14d9124de",
+    "bytes": 12592,
+    "retrieved_utc": "2026-09-29T20:12:47.127502+00:00"
+  },
+  "data/raw/WE__0058___________CAL_ATS_________________P01.CSV": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0000_0089/sol_0058/WE__0058___________CAL_ATS_________________P01.CSV",
+    "sha256": "9ef49c1cd8105e2e69113098bf4bb23538a6d018b3d11cca0b5c20bcb0be67a1",
+    "bytes": 9133135,
+    "retrieved_utc": "2026-09-29T20:13:11.632247+00:00"
+  },
+  "data/raw/WE__0058___________CAL_ATS_________________P01.xml": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0000_0089/sol_0058/WE__0058___________CAL_ATS_________________P01.xml",
+    "sha256": "ad7605b388cb64563208fadd233b6b75757beaf27209091cc9e6d4c9c7adff49",
+    "bytes": 9808,
+    "retrieved_utc": "2026-09-29T20:13:12.036424+00:00"
+  },
+  "data/raw/WE__0058___________DER_WS__________________P02.CSV": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0000_0089/sol_0058/WE__0058___________DER_WS__________________P02.CSV",
+    "sha256": "79667007d6793af29f2b768aba7a73230f4fb0e13e820fbb66aec5d18b2b9c26",
+    "bytes": 2706112,
+    "retrieved_utc": "2026-09-29T20:13:20.235580+00:00"
+  },
+  "data/raw/WE__0058___________DER_WS__________________P02.xml": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0000_0089/sol_0058/WE__0058___________DER_WS__________________P02.xml",
+    "sha256": "dacc080febbefef4db2eee056e5385efab2c49d6d3ad312207df45c5194f228d",
+    "bytes": 10671,
+    "retrieved_utc": "2026-09-29T20:13:20.612654+00:00"
+  },
+  "data/raw/WE__0058___________DER_PS__________________P01.CSV": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0000_0089/sol_0058/WE__0058___________DER_PS__________________P01.CSV",
+    "sha256": "ff85ff717e642e2ba066ec9ef105682a54e9810e4170eca13f807ddc34ced2c4",
+    "bytes": 3073251,
+    "retrieved_utc": "2026-09-29T20:14:50.422207+00:00"
+  },
+  "data/raw/WE__0058___________DER_PS__________________P01.xml": {
+    "url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0000_0089/sol_0058/WE__0058___________DER_PS__________________P01.xml",
+    "sha256": "9764e510b8f24c1ff9afdbf87e3d0721ea0749967f1e167f8f8cecf6145012e8",
+    "bytes": 9096,
+    "retrieved_utc": "2026-09-29T20:14:50.999283+00:00"
+  },
+  "data/raw/ingenuity-nasa-original.glb": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/ingenuity-mars-helicopter/Ingenuity%20Mars%20Helicopter.glb",
+    "sha256": "9e5a5398ab335eae7d46335085301ce46fb7de052300b645debe8bac6d39f2b5",
+    "bytes": 2019408,
+    "retrieved_utc": "2026-09-29T20:12:18.707619+00:00"
+  },
+  "data/raw/helicam-sol58-index.html": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/",
+    "sha256": "d6e1b221fa667e32a9e127d18ac621f714fc78f3bd990bfc219734af292db27f",
+    "bytes": 34054,
+    "retrieved_utc": "2026-09-29T20:18:10.585262+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089521_264EDR_N0010001HELI00537_0000A0J03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089521_264EDR_N0010001HELI00537_0000A0J03.xml",
+    "sha256": "ece98091e16dcbeae344ce093ae5771a1cefdce1567fe90c299270fe6af7103a",
+    "bytes": 33662,
+    "retrieved_utc": "2026-09-29T20:18:10.723332+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089522_259EDR_N0010001HELI00567_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089522_259EDR_N0010001HELI00567_0000LUJ03.xml",
+    "sha256": "dbd04864fe7de0cd77095a0023cb1ab16139f9763342b75a63ab27ae726aca6c",
+    "bytes": 33258,
+    "retrieved_utc": "2026-09-29T20:18:10.942790+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089523_256EDR_N0010001HELI00597_0000A0J04.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089523_256EDR_N0010001HELI00597_0000A0J04.xml",
+    "sha256": "70548a63ad310a13ec9625c82c1980ebc0abc89d51d01b33b4ce33b5f6f583a6",
+    "bytes": 33699,
+    "retrieved_utc": "2026-09-29T20:18:11.182772+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089527_267EDR_N0010001HELI00718_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089527_267EDR_N0010001HELI00718_0000LUJ03.xml",
+    "sha256": "38a233e29f3886278d75121fd26ae4cef5f496b13040c85a1ca99ac491fa3dfe",
+    "bytes": 33254,
+    "retrieved_utc": "2026-09-29T20:18:11.384384+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089532_278EDR_N0010001HELI00869_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089532_278EDR_N0010001HELI00869_0000LUJ03.xml",
+    "sha256": "897827c1be97247ac7bf57f73472dfcef26fce930df3646fc69e34f51d35545a",
+    "bytes": 33267,
+    "retrieved_utc": "2026-09-29T20:18:11.547073+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089537_285EDR_N0010001HELI01020_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089537_285EDR_N0010001HELI01020_0000LUJ03.xml",
+    "sha256": "c7906b048854a2030764df3eddb4e575e3c6e2a69fcc49e568d0cb18ae71348a",
+    "bytes": 33263,
+    "retrieved_utc": "2026-09-29T20:18:11.822601+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089542_296EDR_N0010001HELI01171_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089542_296EDR_N0010001HELI01171_0000LUJ03.xml",
+    "sha256": "b1ea09cac71bc4729f5e3d566ac74dd3b90d2af52f61026a3da1e8d234b997c3",
+    "bytes": 33258,
+    "retrieved_utc": "2026-09-29T20:18:12.033013+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089547_303EDR_N0010001HELI01322_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089547_303EDR_N0010001HELI01322_0000LUJ03.xml",
+    "sha256": "13bde036b4fede831415363e15e80ae4ac066d931b4204ede3b0dd268d1793d3",
+    "bytes": 33259,
+    "retrieved_utc": "2026-09-29T20:18:12.272172+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089552_314EDR_N0010001HELI01473_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089552_314EDR_N0010001HELI01473_0000LUJ03.xml",
+    "sha256": "03525f2087240b1284538b7c091f1c8972d1a542679eda9f3a498b3939b81e55",
+    "bytes": 33264,
+    "retrieved_utc": "2026-09-29T20:18:12.439507+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089556_260EDR_N0010001HELI01592_0000A0J04.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089556_260EDR_N0010001HELI01592_0000A0J04.xml",
+    "sha256": "dc2b1d3e6a75a32356889f76cd6bc7ee7bc68cccc223b230196b55ff21b75691",
+    "bytes": 33709,
+    "retrieved_utc": "2026-09-29T20:18:12.585913+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089557_321EDR_N0010001HELI01624_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089557_321EDR_N0010001HELI01624_0000LUJ03.xml",
+    "sha256": "019162f1214b34eee358e2df5c168b3badbf551a4e989d536a6534e70634089a",
+    "bytes": 33260,
+    "retrieved_utc": "2026-09-29T20:18:12.840758+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089558_256EDR_N0010001HELI01652_0000A0J04.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089558_256EDR_N0010001HELI01652_0000A0J04.xml",
+    "sha256": "dfd8c2c22f852d3b7a13cd11c82895d56e65612714b2b25173f18502eb921e62",
+    "bytes": 33700,
+    "retrieved_utc": "2026-09-29T20:18:13.053014+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089562_332EDR_N0010001HELI01775_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089562_332EDR_N0010001HELI01775_0000LUJ03.xml",
+    "sha256": "577c5c2634de5f148d18b27a785cbbe526023b958e5474f42fb0a26015dfd58f",
+    "bytes": 33265,
+    "retrieved_utc": "2026-09-29T20:18:13.242381+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089567_340EDR_N0010001HELI01926_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089567_340EDR_N0010001HELI01926_0000LUJ03.xml",
+    "sha256": "f8424f36d147a6fc1b641c867bb49262df54e1707be6853324d36d2f40d45df4",
+    "bytes": 33260,
+    "retrieved_utc": "2026-09-29T20:18:13.422454+00:00"
+  },
+  "data/raw/helicam/HNM_0058_0672089572_350EDR_N0010001HELI02077_0000LUJ03.xml": {
+    "url": "https://planetarydata.jpl.nasa.gov/img/data/mars2020/mars2020_helicam/data/sol/00058/ids/edr/heli/HNM_0058_0672089572_350EDR_N0010001HELI02077_0000LUJ03.xml",
+    "sha256": "95c16fee5543d8f538c4f6f4c9aabd39bb4e3107b0fd420348fdf9168ff34844",
+    "bytes": 33262,
+    "retrieved_utc": "2026-09-29T20:18:13.616667+00:00"
+  },
+  "data/raw/Mars2020_Camera_SIS.pdf": {
+    "url": "https://pds-imaging.jpl.nasa.gov/documentation/Mars2020_Camera_SIS.pdf",
+    "sha256": "885059136f6d7a04d9f41dc97fa6b8cdedf1ad78b708a97a19b1c9bace9d21d3",
+    "bytes": 61563309,
+    "retrieved_utc": "2026-09-29T20:20:17.422603+00:00"
+  }
+}

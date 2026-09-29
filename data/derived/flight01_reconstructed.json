@@ -1,0 +1,18 @@
+{
+  "source_kind": "reconstructed",
+  "measured_flight_telemetry": false,
+  "anchors": {
+    "duration_s": 39.1,
+    "hover_altitude_m": 3,
+    "hover_duration_s": 30
+  },
+  "source": "https://science.nasa.gov/photojournal/perseverances-mastcam-z-video-of-ingenuitys-first-full-flight/",
+  "assumptions": [
+    "symmetric smoothstep ascent/descent",
+    "zero horizontal motion",
+    "identity attitude (historical yaw maneuver omitted)",
+    "700 Pa and 230 K illustrative atmosphere, not MEDA measurements"
+  ],
+  "frame": "local ENU, meters; quaternion xyzw",
+  "time": "elapsed SI seconds, epoch assigned at replay; no claimed historical UTC precision"
+}

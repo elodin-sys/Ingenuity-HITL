@@ -1,0 +1,5 @@
+# Runtime GLBs are ignored; source archive uses ordinary Git, not LFS.
+asset-sources/*.gz binary
+
+# Preserve CSV bytes/checksums and standard CSV CRLF endings across platforms.
+data/derived/*.csv -text whitespace=cr-at-eol

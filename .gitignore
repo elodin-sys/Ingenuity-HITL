@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+runs/
+.env
+.env.local
+data/raw/
+*.part
+.tools/
+config/selection.json
+assets/schematics/selected.kdl
+
+# Prepared locally by scripts/prepare_assets.py
+assets/models/*.glb

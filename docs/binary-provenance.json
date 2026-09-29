@@ -1,0 +1,12 @@
+{
+  "elodin": {
+    "version": "elodin 0.19.3-alpha.0+d24b7193c.dirty",
+    "sha256": "b6aa561101bc44f14e3e2f1dc863e6ecca052b4a6908bd7a02052766658d39e6",
+    "selection": ".tools/elodin; ignored local binary"
+  },
+  "elodin-db": {
+    "version": "elodin-db 0.19.2-alpha.0+ff26c97e1.dirty",
+    "sha256": "14bb9903dcfdf8ac8a350bcd221240b1c040228d19cec77ddce46b6f8d5ba301",
+    "selection": "elodin-db on PATH"
+  }
+}

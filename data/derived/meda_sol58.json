@@ -1,0 +1,17 @@
+{
+  "rows": 616,
+  "start_lmst": "00058M12:28:00.962",
+  "end_lmst": "00058M12:37:59.512",
+  "source_sclk_start_s": 672089204.0,
+  "source_sclk_end_s": 672089819.0,
+  "pressure_median_pa": 748.47,
+  "ats_local_temp1_median_k": 235.54500000000002,
+  "valid_wind_rows": 602,
+  "notes": [
+    "Perseverance MEDA, NOT sensors on Ingenuity",
+    "ATS_LOCAL_TEMP1 is local sensor temperature, not an asserted ambient retrieval",
+    "Missing/999999999 wind values excluded; only ROVER_STILL=1",
+    "LMST minute approximation; no exact alignment to Ingenuity flight data",
+    "SCLK differences are seconds; LMST seconds are not used as SI elapsed time"
+  ]
+}

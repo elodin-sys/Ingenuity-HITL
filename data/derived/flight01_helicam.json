@@ -1,0 +1,36 @@
+{
+  "source_kind": "archived_navigation_state_at_image_acquisition",
+  "measured_high_rate_flight_log": false,
+  "rows": 15,
+  "start_utc": "2021-04-19T07:34:12.020727Z",
+  "end_utc": "2021-04-19T07:35:03.107342Z",
+  "duration_s": 51.08661508560181,
+  "source_frame": "HELI_S2_FRAME relative to HELI_G_FRAME, solution TELEMETRY",
+  "display_frame": "Rx(pi) * HELI_G, local Z-up; not geographically ENU",
+  "quaternion_display": "Rx(pi) * Q_S2_to_G, normalized; xyzw",
+  "max_s2_height_m": 3.253500699996948,
+  "notes": [
+    "Pose is the IMU S2 origin and sensing axes, not calibrated GLB body pose",
+    "No interpolation, invented samples, or historical endpoint padding",
+    "Includes post-landing estimates which drift: do not treat these as physical motion",
+    "First image occurs during ascent; elapsed zero is first image, not liftoff",
+    "HELI_M is static in these labels; it is not used as moving vehicle truth"
+  ],
+  "labels": [
+    "HNM_0058_0672089521_264EDR_N0010001HELI00537_0000A0J03.xml",
+    "HNM_0058_0672089522_259EDR_N0010001HELI00567_0000LUJ03.xml",
+    "HNM_0058_0672089523_256EDR_N0010001HELI00597_0000A0J04.xml",
+    "HNM_0058_0672089527_267EDR_N0010001HELI00718_0000LUJ03.xml",
+    "HNM_0058_0672089532_278EDR_N0010001HELI00869_0000LUJ03.xml",
+    "HNM_0058_0672089537_285EDR_N0010001HELI01020_0000LUJ03.xml",
+    "HNM_0058_0672089542_296EDR_N0010001HELI01171_0000LUJ03.xml",
+    "HNM_0058_0672089547_303EDR_N0010001HELI01322_0000LUJ03.xml",
+    "HNM_0058_0672089552_314EDR_N0010001HELI01473_0000LUJ03.xml",
+    "HNM_0058_0672089556_260EDR_N0010001HELI01592_0000A0J04.xml",
+    "HNM_0058_0672089557_321EDR_N0010001HELI01624_0000LUJ03.xml",
+    "HNM_0058_0672089558_256EDR_N0010001HELI01652_0000A0J04.xml",
+    "HNM_0058_0672089562_332EDR_N0010001HELI01775_0000LUJ03.xml",
+    "HNM_0058_0672089567_340EDR_N0010001HELI01926_0000LUJ03.xml",
+    "HNM_0058_0672089572_350EDR_N0010001HELI02077_0000LUJ03.xml"
+  ]
+}

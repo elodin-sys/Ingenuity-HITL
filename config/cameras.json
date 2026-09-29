@@ -1,0 +1,44 @@
+[
+  {
+    "entity_name": "display",
+    "camera_name": "navcam.gray",
+    "width": 640,
+    "height": 480,
+    "fov_degrees": 82.1203667805586,
+    "near": 0.03,
+    "far": 80.0,
+    "pos_offset": [
+      0.0,
+      0.0,
+      -0.14
+    ],
+    "rot_offset": [
+      0.0,
+      90.0,
+      0.0
+    ],
+    "format": "gray8",
+    "fps": 10.0,
+    "create_frustum": false,
+    "cinematic": true,
+    "ev100": 13.5,
+    "environment": {
+      "sun": {
+        "direction": [
+          0.07090683465561792,
+          0.08037034561270968,
+          0.9942398243609107
+        ],
+        "illuminance": 60000,
+        "shadows": true
+      },
+      "ambient_scale": 0.3,
+      "sky_color": {
+        "r": 0.4823529411764706,
+        "g": 0.3254901960784314,
+        "b": 0.23921568627450981,
+        "a": 1
+      }
+    }
+  }
+]

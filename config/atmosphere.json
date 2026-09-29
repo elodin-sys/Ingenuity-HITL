@@ -1,0 +1,9 @@
+{
+  "seed": 58,
+  "runs": 1000,
+  "status": "Illustrative sensitivity priors; not fitted to flight telemetry",
+  "pressure_pa": [600, 800],
+  "temperature_k": [190, 250],
+  "wind_mps": [0, 15],
+  "drag_area_m2": [0.01, 0.06]
+}

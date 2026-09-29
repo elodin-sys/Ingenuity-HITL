@@ -1,0 +1,20 @@
+{
+  "release": "v0.19.2",
+  "url": "https://github.com/elodin-sys/elodin/releases/tag/v0.19.2",
+  "platform": "aarch64-apple-darwin",
+  "tested_utc_date": "2026-09-29",
+  "binaries": {
+    "elodin": {
+      "version": "0.19.2+dd5b6ad",
+      "sha256": "978123d5a7a5ada5852e6621a6b1926becc99c9f480306f8b02b4d50dd11bd8d",
+      "archive": "elodin-aarch64-apple-darwin.tar.gz",
+      "archive_sha256": "9e883cf91422f6fd3c84cd1b1b0e516bdd2a92f28c2a9c49166e017875760864"
+    },
+    "elodin-db": {
+      "version": "0.19.2+dd5b6ad",
+      "sha256": "b0fcdb35fd70c1e1f6fc27475213a0371719811283747975dbe06ba7de34ead8",
+      "archive": "elodin-db-aarch64-apple-darwin.tar.gz",
+      "archive_sha256": "9251582c11d68f8ef736aa75491177f77ec4e39bc963a7c185e8255c9f2d795d"
+    }
+  }
+}

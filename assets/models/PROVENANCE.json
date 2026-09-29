@@ -1,0 +1,21 @@
+{
+  "source": "../../data/raw/ingenuity-nasa-original.glb",
+  "credit": "NASA / Brian E. Kumanchik",
+  "operation": "Decode Draco and convert WebP textures to PNG using @gltf-transform/cli 4.5.1; no simplification",
+  "output_sha256": "da4bd275343fb280e39839f8dfc23386be577193e64b14e9049d825a3e45e25d",
+  "command": "npx --yes --package=node@22 --package=@gltf-transform/cli@4.5.1 gltf-transform png data/raw/ingenuity-nasa-original.glb assets/models/ingenuity.glb --formats '*'",
+  "visual_alignment": {
+    "rotation_xyzw": [
+      0.7071067811865476,
+      0,
+      0,
+      0.7071067811865476
+    ],
+    "translation_m": [
+      0,
+      0,
+      -0.192481545
+    ],
+    "calibrated": false
+  }
+}

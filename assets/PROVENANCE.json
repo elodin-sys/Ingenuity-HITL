@@ -1,0 +1,28 @@
+{
+  "mars_terrain.glb": {
+    "sha256": "2c4e6431e29f23c3743e3038f404c5e5f86830ac22e05fd9a23df26491a5aedf",
+    "bytes": 7575604,
+    "source": "Earlier Mars workshop procedural terrain, launch equipment excluded; textured by scripts/texture_terrain.py; not measured topography; distant decorative basalt removed"
+  },
+  "mars.glb": {
+    "sha256": "10b26913da13748bd35abb78e03066e6af6e1711fa2e41cb24532b69756b9741",
+    "bytes": 18213812,
+    "source": "Earlier Mars workshop; NASA/JPL Viking, USGS, ASU MDIM color mosaic; https://www.mars.asu.edu/data/mdim_color/"
+  },
+  "mars_close_terrain.glb": {
+    "sha256": "3e89fed5e4a0ae25d007916184f77b8125cb913254c2c02bf70be4dd3ed44ab6",
+    "bytes": 4395608,
+    "source": "scripts/build_close_terrain.py + scripts/texture_terrain.py; procedural, not measured topography"
+  },
+  "ingenuity.glb": {
+    "sha256": "da4bd275343fb280e39839f8dfc23386be577193e64b14e9049d825a3e45e25d",
+    "bytes": 11162376,
+    "source": "NASA / Brian E. Kumanchik; see models/PROVENANCE.json"
+  },
+  "mars_flight59_terrain.glb": {
+    "source": "Procedural reconstruction; Jackson et al. 2025 section 2.3.6, DOI 10.3847/PSJ/ad8b41",
+    "description": "Flight 59 megaripple: approximately 1 m high and 6 m wide. Orientation, length and fine relief are illustrative. Not a measured DEM.",
+    "sha256": "63eb7822da66ac2e88d358bc31055b427ffa7badc652918af39d6ada4b7ff61a",
+    "bytes": 3724616
+  }
+}
