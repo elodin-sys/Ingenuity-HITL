@@ -5,6 +5,8 @@ and the Elodin Editor. This standalone application is intended for an Elodin
 Systems repository. It uses installed binaries, without building or depending on
 the Elodin source tree.
 
+https://github.com/user-attachments/assets/b11b3a83-635a-4e05-a625-2f74b920e703
+
 The default workshop demonstrates **Flight 59, sol 915, 16 September 2023**:
 one chase viewport, a simulated downward Navcam, cyan NASA trajectory, orange
 best-fit Monte Carlo trajectory, and numeric monitors underneath.
