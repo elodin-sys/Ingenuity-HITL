@@ -13,7 +13,7 @@ binaries, without building or depending on the Elodin source tree.
 
 ## Watch the experiment
 
-[![Web controls on the left and the Elodin helicopter viewport on the right](docs/images/flight59-web-control.jpg)](https://github.com/elodin-sys/ingenuity-elodin/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
+https://github.com/user-attachments/assets/9f64695a-1fa5-4178-a73a-8ed8a7c1f028
 
 [Watch / download the demo](https://github.com/elodin-sys/ingenuity-elodin/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
 — 3 min 52 s, English annotations, 9 MB.
