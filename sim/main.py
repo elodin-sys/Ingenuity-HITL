@@ -36,6 +36,12 @@ Actuator = Annotated[
     jax.Array, el.Component("actuator", el.ComponentType(el.PrimitiveType.F64, (4,)))
 ]
 Rotor = Annotated[jax.Array, el.Component("rotor", el.ComponentType(el.PrimitiveType.F64, (2,)))]
+Wind = Annotated[
+    jax.Array,
+    el.Component(
+        "wind", el.ComponentType(el.PrimitiveType.F64, (3,)), metadata={"external_control": "true"}
+    ),
+]
 
 ReferencePose = Annotated[
     jax.Array,
@@ -68,6 +74,7 @@ class Vehicle(el.Archetype):
     command: Command
     actuator: Actuator
     rotor: Rotor
+    wind: Wind
     referencepose: ReferencePose
     toppose: TopPose
     bottompose: BottomPose
@@ -142,7 +149,7 @@ class Diagnostics(el.Archetype):
     rpm: Rpm
 
 
-def systems(density, wind):
+def systems(density):
     @el.map
     def actuator(command: Command, state: Actuator, rotor: Rotor) -> tuple[Actuator, Rotor]:
         # Simple first-order collective/cyclic response; coefficients are priors.
@@ -153,12 +160,14 @@ def systems(density, wind):
         return state, jnp.array([rpm, phase])
 
     @el.map
-    def forces(pos: el.WorldPos, vel: el.WorldVel, state: Actuator, rotor: Rotor) -> el.Force:
+    def forces(
+        pos: el.WorldPos, vel: el.WorldVel, state: Actuator, rotor: Rotor, wind: Wind
+    ) -> el.Force:
         q = pos.angular()
         thrust = (
             2 * MASS * G * state[0] * density / (700 / (188.92 * 220)) * (rotor[0] / 2400.0) ** 2
         )
-        relative = vel.linear() - jnp.array(wind)
+        relative = vel.linear() - wind
         drag = -0.5 * density * 0.03 * jnp.linalg.norm(relative) * relative
         body_rate = q.inverse() @ vel.angular()
         torque = jnp.array([0.04, 0.04, 0.03]) * state[1:4] - 0.004 * body_rate
@@ -195,6 +204,9 @@ def main():
     parser.add_argument("--db", default="runs/closed-loop-flight59")
     parser.add_argument("--backend", default="cranelift")
     parser.add_argument("--db-addr", default="127.0.0.1:2240")
+    parser.add_argument("--web-url", help="Pi web relay, reached over the SSH tunnel")
+    parser.add_argument("--web-token", default=".tools/web-bridge-token")
+    parser.add_argument("--hardware", choices=("local", "raspberry"), default="local")
     args = parser.parse_args()
     sys.argv = [sys.argv[0], "run", args.db_addr]
     if Path(args.db).exists():
@@ -202,6 +214,11 @@ def main():
     profile = json.loads((ROOT / "config/flight59-profile.json").read_text())
     duration = args.duration or profile["duration_s"] + 2
     host, port = args.controller.rsplit(":", 1)
+    rows = list(csv.DictReader((ROOT / "data/derived/sol00915.csv").open()))
+    archive_t = np.array([float(row["time_s"]) for row in rows])
+    archive_p = np.array(
+        [[float(row[k]) for k in ("qx", "qy", "qz", "qw", "x_m", "y_m", "z_m")] for row in rows]
+    )
     world = el.World()
     world.spawn(
         [
@@ -213,17 +230,14 @@ def main():
                 command=jnp.zeros(9),
                 actuator=jnp.zeros(4),
                 rotor=jnp.zeros(2),
-                referencepose=jnp.full(7, jnp.nan),
+                wind=jnp.array([args.wind, 0.0, 0.0]),
+                referencepose=jnp.array(archive_p[0]),
                 toppose=jnp.array([0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]),
                 bottompose=jnp.array([0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]),
             ),
         ],
         name="display",
     )
-
-    @el.dataclass
-    class PoseOnly(el.Archetype):
-        world_pos: el.WorldPos
 
     world.spawn(
         Diagnostics(
@@ -234,24 +248,25 @@ def main():
         ),
         name="mission",
     )
-    # The reference ghost has no actuator component, so forces/physics must not
-    # integrate it. Its displayed pose is explicitly reset from archive samples.
+    # ReferencePose is a render-only component, never integrated by physics.
     rng = np.random.default_rng(args.seed)
-    rows = list(csv.DictReader((ROOT / "data/derived/sol00915.csv").open()))
-    archive_t = np.array([float(row["time_s"]) for row in rows])
-    archive_p = np.array(
-        [[float(row[k]) for k in ("qx", "qy", "qz", "qw", "x_m", "y_m", "z_m")] for row in rows]
-    )
     records = []
     previous_vz = 0.0
     start = None
+    failure = None
+    bridge = None
+    if args.web_url:
+        from web_bridge import WebBridge
+
+        bridge = WebBridge(args.web_url, args.web_token, args.db)
+    applied_wind = args.wind
     rotor_pivots = json.loads((ROOT / "runs/rotor-pivots.json").read_text())
     with socket.create_connection((host, int(port)), timeout=5) as connection:
         connection.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         reader = connection.makefile("rb")
 
         def step(tick, ctx):
-            nonlocal previous_vz, start
+            nonlocal previous_vz, start, applied_wind
             t = tick * DT
             if start is None:
                 time.sleep(args.startup_delay)
@@ -285,11 +300,16 @@ def main():
                 1.0,
             ]
             previous_vz = vel[5]
+            sent = time.monotonic()
             connection.sendall((str(tick) + " " + " ".join(map(str, measured)) + "\n").encode())
             reply = reader.readline(2048).decode().split()
-            if len(reply) != 10 or reply[0] != str(tick):
+            if len(reply) not in (10, 12) or reply[0] != str(tick) or (bridge and len(reply) != 12):
                 raise RuntimeError(f"Controller failed or sequence mismatch: {reply[:2]}")
-            command = np.array(list(map(float, reply[1:])))
+            rtt_ms = (time.monotonic() - sent) * 1000
+            command = np.array(list(map(float, reply[1:10])))
+            gains = list(map(float, reply[10:])) if len(reply) == 12 else [1.0, 1.0]
+            if not 0.2 <= gains[0] <= 2.0 or not 0.6 <= gains[1] <= 1.6:
+                raise RuntimeError("Invalid FSW tuning acknowledgement")
             if (
                 not np.isfinite(command).all()
                 or not 0 <= command[0] <= 1
@@ -304,6 +324,9 @@ def main():
             )
             reference[:4] /= np.linalg.norm(reference[:4])
             writes = {"display.command": command}
+            wind_target, event_id = bridge.controls() if bridge else (args.wind, 0)
+            applied_wind += (wind_target - applied_wind) * (1 - math.exp(-DT / 0.5))
+            writes["display.wind"] = np.array([applied_wind, 0.0, 0.0])
             diagnostic = {
                 "elapsed": t,
                 "height": pose[6],
@@ -314,7 +337,11 @@ def main():
                 "rpm": np.asarray(values["display.rotor"]).reshape(-1)[0],
             }
             writes.update({"mission." + k: np.array([v]) for k, v in diagnostic.items()})
-            writes["display.referencepose"] = reference if observed else np.full(7, np.nan)
+            # Clamp the render-only trail at the measured endpoints. NaN in its
+            # first sample invalidates the Editor's trail anchor. Clamping adds
+            # no spatial segments or NASA ground endpoints; validity and error
+            # remain explicitly gated by observed, above and in the run log.
+            writes["display.referencepose"] = reference
             # Publish two rigid rotor transforms driven by physical model phase.
             phase = float(np.asarray(values["display.rotor"]).reshape(-1)[1])
 
@@ -347,21 +374,48 @@ def main():
                     "reference_error_m": float(np.linalg.norm(pose[4:] - reference[4:]))
                     if observed
                     else None,
+                    "reference": reference[4:].tolist() if observed else None,
+                    "wind_mps": applied_wind,
+                    "stiffness": gains[0],
+                    "damping": gains[1],
+                    "rtt_ms": rtt_ms,
+                    "sequence": tick,
+                    "event_id": event_id,
+                    "hardware": args.hardware,
+                    "commands": command[:4].tolist(),
+                    "estimate_m": float(command[5]),
                 }
             )
+            if bridge:
+                bridge.publish(records[-1])
+
+        def guarded_step(tick, ctx):
+            nonlocal failure
+            if failure is not None:
+                return
+            try:
+                step(tick, ctx)
+            except Exception as error:
+                # SDK 0.19.2 logs callback exceptions and otherwise keeps
+                # integrating. Request cancellation through is_canceled, then
+                # propagate failure outside the swallowed callback.
+                failure = error
 
         try:
             world.run(
-                systems(args.pressure / (188.92 * args.temperature), (args.wind, 0.0, 0.0)),
+                systems(args.pressure / (188.92 * args.temperature)),
                 simulation_rate=1 / DT,
                 max_ticks=round(duration / DT),
-                post_step=step,
+                post_step=guarded_step,
+                is_canceled=lambda: failure is not None,
                 db_path=args.db,
                 interactive=False,
                 backend=args.backend,
                 log_level="warn",
             )
         finally:
+            if bridge:
+                bridge.close()
             if records:
                 output = Path(args.db).with_suffix(".json")
                 output.parent.mkdir(parents=True, exist_ok=True)
@@ -376,6 +430,10 @@ def main():
                     )
                     + "\n"
                 )
+    if failure is not None:
+        raise RuntimeError(
+            "Closed-loop simulation stopped after controller/callback failure"
+        ) from failure
     print(json.dumps({"samples": len(records), "last": records[-1]}))
 
 

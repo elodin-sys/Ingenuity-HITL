@@ -1,25 +1,97 @@
 # Ingenuity-HITL
 
-Replay NASA Ingenuity navigation data from a Raspberry Pi into native Elodin DB
-and the Elodin Editor. This standalone application is intended for an Elodin
-Systems repository. It uses installed binaries, without building or depending on
-the Elodin source tree.
+A Raspberry Pi flies a simulated Mars helicopter. Elodin runs the physics on a
+Mac, sends noisy sensor measurements to independent Rust flight software on the
+Pi, and applies its actuator commands to the next simulation step. The Editor
+compares the resulting flight with NASA Ingenuity **Flight 59 — 16 September
+2023, sol 915**.
 
+This standalone application uses the released Python SDK and installed Elodin
+binaries, without building or depending on the Elodin source tree.
 
-https://github.com/user-attachments/assets/ac4efafd-1287-42d5-b621-070fd86b34f5
+## Watch the experiment
 
+[![Web controls on the left and the Elodin helicopter viewport on the right](docs/images/flight59-web-control.jpg)](https://github.com/elodin-sys/Ingenuity-HITL/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
 
-The default workshop demonstrates **Flight 59, sol 915, 16 September 2023**:
-one chase viewport, a simulated downward Navcam, cyan NASA trajectory, orange
-best-fit Monte Carlo trajectory, and numeric monitors underneath.
+[Watch / download the demo](https://github.com/elodin-sys/Ingenuity-HITL/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
+— 3 min 52 s, English annotations, 9 MB.
 
-## Closed-loop Flight 59 development
+The Mac simulates a drone on Mars while a Raspberry Pi computes flight commands
+from simulated sensor measurements. A strong synthetic gust pushes the drone
+off course, and the controller brings it back toward its commanded position.
+Later, we reduce the altitude correction gain during a climb while keeping
+vertical damping unchanged. The video shows the web controls and the Elodin
+viewport together, comparing this robustness experiment with the NASA Flight 59
+reference.
 
-A new mode now separates the Python Elodin plant in [`sim/`](sim/) from the
-Rust controller in [`controller/`](controller/). It keeps Flight 59 as its
-mission and NASA comparison reference. See the [architecture diagram](docs/ARCHITECTURE.md)
+The 60 m/s gust is a **severe synthetic stress test**, not measured Flight 59
+weather. The simplified aerodynamic model is not validated at that wind speed.
+The altitude knob changes how strongly the controller corrects altitude error;
+it does not change the altitude target. See [the experiment and its limits](docs/WEB_BENCH.md#interpreting-the-robustness-experiment).
+
+## Interactive Raspberry Pi control desk
+
+The Pi also serves a lightweight web interface with **crosswind, altitude correction gain
+and vertical damping knobs**, a timed gust, applied-setting acknowledgments,
+controller outputs, the NASA/simulated altitude comparison and the simulated
+downward camera. Gain changes are consumed by the actual Rust controller on the
+Pi; wind changes affect the Mac physics. An offline recording remains available
+when the bench stops, with the controls disabled.
+
+See [launch instructions and the web-loop diagram](docs/WEB_BENCH.md).
+The static interface is compatible with GitHub Pages; live operation needs the
+running Pi and Mac bench.
+
+After completing the [closed-loop prerequisites](docs/CLOSED_LOOP.md), run from
+the repository root:
+
+```sh
+nix develop
+export INGENUITY_PI_HOST=your-pi-ssh-alias
+export ELODIN_BIN=/absolute/path/to/elodin
+./scripts/web_bench.sh
+```
+
+Open **http://127.0.0.1:8089/** for the controls. In another terminal, run
+`elodin editor 127.0.0.1:2270` for the native viewport. Choose **Take control**;
+the applied-setting acknowledgments show what the plant and controller actually
+used. The launcher prepares assets, deploys the Pi services, starts the plant and
+camera renderer, and records the flight.
+
+To explore the bundled recording without hardware, serve the static page with
+`uv run python -m http.server 8089 --directory web/dist`. Controls are disabled
+in this preview, and the camera is a recorded still.
+
+## Simulation / flight software split
+
+The Python Elodin plant in [`sim/`](sim/) and the independent Rust flight software
+in [`controller/`](controller/) run as separate processes on separate computers.
+See the [architecture diagram](docs/ARCHITECTURE.md)
 and [run instructions and model limits](docs/CLOSED_LOOP.md).
-The original `workshop.sh` remains the archived replay mode described below.
+
+```mermaid
+flowchart LR
+    M["Mac · sim/<br/>physics and simulated sensors"] -->|sensor measurements| P["Raspberry Pi · controller/<br/>Rust estimation and flight control"]
+    P -->|actuator commands| M
+    W["Browser · web controls"] -->|control gains| P
+    W -->|synthetic wind| M
+    M --> D[(Elodin DB on Mac)]
+    N["NASA Flight 59<br/>archived reference"] --> D
+    D --> E["Editor on Mac<br/>trajectories, monitors, Navcam"]
+```
+
+```text
+sim/                      Mac: physics, actuators, simulated sensors, NASA comparison
+controller/src/lib.rs     Pi: estimation, mission logic and feedback control
+controller/src/transport.rs  Pi: bounded sensor/command TCP transport
+controller/src/main.rs    Pi: executable startup and mission-plan loading
+monte-carlo/              Mac: repeat and score closed-loop trials
+replay/                   Legacy archive-replay documentation and entry points
+```
+
+The controller crate has no Elodin or Python dependency. Its control library has
+no networking, filesystem access, or archive reader. Removing the controller
+connection stops the simulation; there is no Python flight-control fallback.
 
 ### Processing steps and where they run
 
@@ -34,6 +106,21 @@ The original `workshop.sh` remains the archived replay mode described below.
 
 The Rust controller is demonstration flight software, not NASA's flight software.
 The simulated sensors and camera are model outputs, not archived measurements.
+
+### Run the closed loop
+
+From the repository root, with native `elodin` and `elodin-db` installed:
+
+```sh
+nix develop
+export INGENUITY_PI_HOST=your-ssh-alias
+./scripts/closed_loop.sh pi
+# Or run the same Rust controller locally:
+./scripts/closed_loop.sh sitl
+```
+
+See [setup, tested scope and model limits](docs/CLOSED_LOOP.md). The original
+`scripts/workshop.sh` runs **archive replay**, a separate mode described below.
 
 ## Data and coverage
 
@@ -87,7 +174,7 @@ an independently validated flight-dynamics model or recovered historical weather
 In archive replay mode, the Pi performs hardware replay; this is not closed-loop
 HITL validation. The separate closed-loop mode is described above.
 
-## Run
+## Run the legacy archive replay
 
 Run development commands from this repository root inside `nix develop`, using
 `uv` for Python. Install native `elodin` and `elodin-db` binaries separately;
@@ -135,9 +222,11 @@ to `~/Ingenuity-HITL/runs/trajectory-monte-carlo.json`.
 
 ```sh
 uv run scripts/replay_helicam.py --dry-run
-uv run -m unittest discover -s tests -v
-ruff check scripts tests
-ruff format --check scripts tests
+uv run --with elodin==0.19.2 python -m unittest discover -s tests -v
+cargo test --manifest-path controller/Cargo.toml
+cargo fmt --manifest-path controller/Cargo.toml -- --check
+uv run ruff check scripts tests sim bench
+uv run ruff format --check scripts tests sim bench
 uv run scripts/export_navcam.py runs/YOUR-RECORDING --output runs/navcam.png
 ```
 
@@ -177,6 +266,9 @@ The unused Mars globe is not distributed. Git LFS is not required. The Pi receiv
 scripts and flight data, excluding terrain, models and raw downloads. Runtime
 assets, binaries, package caches and DB recordings still consume local disk space;
 they are separate from the small Git repository.
+
+The demo video is a GitHub Release attachment; only its small preview image is
+stored in the repository. Cloning the code does not download the video.
 
 ## Publication
 

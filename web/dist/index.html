@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Flight 59: interact with a Raspberry Pi flight controller connected to an Elodin simulation."><title>Ingenuity / Flight Control Lab</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="https://github.com/elodin-sys/Ingenuity-HITL">ELODIN <span>/ INGENUITY HITL</span></a><div id="mode" class="badge">LOADING RECORDING</div></header>
+<main>
+<section class="intro"><h1>Ingenuity · Flight 59</h1><p class="lede">16 September 2023 · Sol 915</p></section>
+<section class="signal-path" aria-label="Closed-loop architecture"><div id="node-sensor"><span>MAC<span>Simulated sensors</span></span></div><i aria-hidden="true">→</i><div id="node-fsw"><span>RASPBERRY PI<span>Rust flight software</span></span></div><i aria-hidden="true">→</i><div id="node-plant"><span>MAC / ELODIN<span>Actuators + physics</span></span></div><span class="return-path">↩ measurements from the next step</span><output id="rtt">— ms round trip</output></section>
+<div class="workspace">
+<section class="flight-panel">
+<div class="panel-title"><h2>Altitude</h2><span><i class="legend cyan"></i> NASA <i class="legend orange"></i> Simulation</span></div>
+<canvas id="flight" aria-label="Altitude over time: NASA reference and controlled simulation" role="img"></canvas>
+<div class="metrics"><div><span>ALTITUDE</span><output id="altitude">—</output><small>m · S2 reference point</small></div><div><span>REFERENCE ERROR</span><output id="gap">—</output><small>m · over observed interval</small></div><div><span>COLLECTIVE</span><output id="collective">—</output><small>normalized command</small></div><div><span>MISSION</span><output id="phase">—</output><small id="time">0.00 s</small></div></div>
+<div class="lower-panels"><div class="camera"><div class="panel-title"><h2>Downward Navcam</h2><span id="camera-kind">RECORDED STILL</span></div><img id="camera" src="navcam.png" alt="Simulated downward navigation camera"><p id="camera-note">Native Elodin render, not a NASA photograph.</p></div><div class="command-panel"><div class="panel-title"><h2>FSW output</h2><span id="sequence">— packets</span></div><div id="command-bars"></div><p class="secondary">Rust controller output · Raspberry Pi</p></div></div>
+</section>
+<aside class="control-panel"><div class="control-heading"><div><h2>Flight settings</h2></div><button id="claim" type="button">Take control</button></div><p id="control-note" role="status">Replay mode. Knobs become available when the physical bench is connected.</p>
+<fieldset id="knobs" disabled><legend class="sr-only">Bounded experimental settings</legend>
+<div class="knob" data-key="wind"><div class="dial"><span class="needle"></span><output>0.0</output><small>m/s</small></div><div><label for="wind">Crosswind</label><p>Synthetic wind · robustness testing.</p><input id="wind" type="range" min="-60" max="60" step="1" value="0"><div class="range-labels"><span>−60</span><span>+60 m/s</span></div></div></div>
+<div class="knob" data-key="stiffness"><div class="dial"><span class="needle"></span><output>1.00</output><small>× nominal</small></div><div><label for="stiffness">Altitude correction gain</label><p>Correction per metre of altitude error.</p><input id="stiffness" type="range" min="0.2" max="2.0" step="0.05" value="1"><div class="range-labels"><span>0.20×</span><span>2.00×</span></div></div></div>
+<div class="knob" data-key="damping"><div class="dial"><span class="needle"></span><output>1.00</output><small>× nominal</small></div><div><label for="damping">Vertical damping</label><p>Velocity feedback gain in the Pi FSW.</p><input id="damping" type="range" min="0.6" max="1.6" step="0.05" value="1"><div class="range-labels"><span>0.60×</span><span>1.60×</span></div></div></div>
+<div class="actions"><button id="gust" type="button">60 m/s gust · 8 s sim</button><button id="reset" type="button" class="quiet">Restore nominal</button></div></fieldset>
+<p class="secondary" style="font-size:12px;color:var(--muted)">Severe synthetic gust, not measured Flight 59 weather. Simplified aerodynamic model.</p>
+<p id="applied" class="applied">Applied settings: —</p><div class="event-heading"><h3>Loop events</h3><span>requested → acknowledged</span></div><ol id="events"><li>Waiting for the bench.</li></ol>
+<div class="replay-controls"><button id="play" type="button" class="quiet">Pause replay</button><label for="seek">Recorded flight <output id="seek-label">0 s</output></label><input id="seek" type="range" min="0" max="153.66" step="0.1" value="0"></div>
+</aside></div>
+<details class="connection"><summary>Connect a bench</summary><form id="connection"><label for="endpoint">Relay URL (leave empty for this Raspberry Pi)</label><div><input id="endpoint" type="url" placeholder="https://your-bench.example"><button type="submit">Connect</button></div></form><p>The static GitHub Pages copy needs an HTTPS relay. The Raspberry Pi serves this same interface directly. No SSH or bridge credentials belong in this page.</p></details>
+<footer><p><strong>Demonstration flight software.</strong> Sensor and atmosphere models are approximations. NASA's archive does not include the exact ground endpoints. Replay controls never operate the bench.</p><a href="https://github.com/elodin-sys/Ingenuity-HITL/blob/main/docs/ARCHITECTURE.md">Architecture ↗</a></footer>
+</main><script type="module" src="app.js"></script></body></html>

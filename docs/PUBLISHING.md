@@ -26,6 +26,13 @@ Publication and maintenance notes:
    single-viewport layout and record an example. Review the final diff and files
    to be staged before the developer commits and pushes.
 
-The current scientific milestone is archived navigation replay and conditional
-Monte Carlo trajectory calibration on the same flight. It does not establish
-independent model validation or closed-loop HITL validation. That distinction must stay visible in the public README.
+The repository contains two distinct modes: archived navigation replay with
+conditional calibration, and a closed-loop demonstration with Rust flight
+software on the Pi and an Elodin plant on the Mac. The latter also supports web
+controls for synthetic disturbances and bounded controller gains. Neither mode
+establishes independent flight-model validation or reproduces NASA's flight
+software. Keep these distinctions visible in the public README.
+
+Publish full demonstration videos as GitHub Release attachments, with only a
+small preview image in Git. The `flight59-web-control-demo` release contains the
+English Discord video of the web controls and native Editor together.

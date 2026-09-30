@@ -8,9 +8,11 @@ cyan is the measured NASA reference, orange is the simulated vehicle controlled
 by Rust on the Pi. Commands feed the next step of the same running plant.
 
 The ground process runs `sim/main.py` using the released Elodin Python SDK 0.19.2.
-The Rust executable `controller/src/main.rs` runs the mission state machine,
-range/acceleration altitude estimator, horizontal dead reckoning and feedback
-control. There are no Rust dependencies and no Elodin source dependency.
+The Rust control library `controller/src/lib.rs` implements the mission state
+machine, range/acceleration altitude estimator, horizontal dead reckoning and
+feedback control. `controller/src/main.rs` starts the process and
+`controller/src/transport.rs` handles TCP. There are no Rust dependencies and
+no Elodin source dependency.
 
 ## Mission
 
@@ -73,6 +75,15 @@ The plant rejects missing, invalid or mismatched replies and aborts the run afte
 the transport timeout. It does not continue under an internal Python controller.
 This bench fail-stop policy is not an aircraft emergency-landing strategy.
 
+SDK 0.19.2 logs callback exceptions without aborting its physics loop. The adapter
+therefore latches the failure, requests cancellation via `is_canceled`, saves the
+partial run log, and exits with an error outside the callback. A regression test
+disconnects a fake controller after four replies and verifies this behavior:
+
+```sh
+uv run --with elodin==0.19.2 python -m unittest discover -s tests
+```
+
 ## Model limitations
 
 The plant uses Elodin rigid-body integration with assumed diagonal inertia,
@@ -88,8 +99,10 @@ flow. The camera is a rendering output and is not fed to a vision algorithm.
 The rotor meshes rotate at modeled physical phase; video sampling may alias that
 motion. No archival RPM or actuator commands are claimed.
 
-The NASA reference is displayed only over its observed interval; its missing
-ground endpoints must not be manufactured. Ground clearance, terrain detail and
+The NASA reference trail contains only the observed spatial path. Its render-only
+pose is clamped to the first/last measured point outside coverage, so no extra
+segments are drawn and missing ground endpoints are not manufactured. Comparison
+errors remain undefined outside the observed interval. Ground clearance, terrain detail and
 camera extrinsics remain illustrative as documented in `VISUALS.md`.
 
 ## Monte Carlo with actual FSW
@@ -120,3 +133,11 @@ Three local-controller Monte Carlo trials reached the landing criteria; the best
 This is a conditional fit to this flight with assumed dynamics and sensor models.
 The standalone launcher remains to be tested end to end; these initial runs used
 its component commands separately.
+
+## Earlier recorded demonstration
+
+This video shows the recorded Pi-controlled flight in the Editor, before the
+interactive web controls were added. The latest web-control experiment is linked
+from the [README](../README.md#watch-the-experiment).
+
+https://github.com/user-attachments/assets/ac4efafd-1287-42d5-b621-070fd86b34f5

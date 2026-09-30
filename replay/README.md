@@ -7,3 +7,7 @@ These are reference and analysis tools, not flight software.
 
 The new external Rust flight software lives in `controller/`, and its Elodin
 plant is in `sim/`. See `docs/ARCHITECTURE.md` for the boundary.
+
+The earlier archive-replay video (not the closed-loop FSW experiment) is here:
+
+https://github.com/user-attachments/assets/b11b3a83-635a-4e05-a625-2f74b920e703

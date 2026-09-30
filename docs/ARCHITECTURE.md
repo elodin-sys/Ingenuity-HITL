@@ -65,6 +65,11 @@ flowchart LR
 
 ## Boundary
 
+The controller code is in `controller/src/lib.rs`; it has no sockets, file I/O,
+Elodin dependency or NASA archive reader. `controller/src/transport.rs` is the
+Linux TCP adapter and `controller/src/main.rs` loads mission targets at startup.
+The physical model and simulated sensor generation are in `sim/main.py`.
+
 The plant owns physical truth. The controller receives sensor measurements, not
 the plant state or future NASA trajectory samples. It computes actuator commands;
 the plant applies their physical effects. The external controller must be needed
