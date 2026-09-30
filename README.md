@@ -1,4 +1,4 @@
-# Ingenuity-HITL
+# ingenuity-elodin
 
 A Raspberry Pi flies a simulated Mars helicopter. Elodin runs the physics on a
 Mac, sends noisy sensor measurements to independent Rust flight software on the
@@ -9,11 +9,13 @@ compares the resulting flight with NASA Ingenuity **Flight 59 — 16 September
 This standalone application uses the released Python SDK and installed Elodin
 binaries, without building or depending on the Elodin source tree.
 
+[v0.1.0 — experimental preview](https://github.com/elodin-sys/ingenuity-elodin/releases/tag/v0.1.0)
+
 ## Watch the experiment
 
-[![Web controls on the left and the Elodin helicopter viewport on the right](docs/images/flight59-web-control.jpg)](https://github.com/elodin-sys/Ingenuity-HITL/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
+[![Web controls on the left and the Elodin helicopter viewport on the right](docs/images/flight59-web-control.jpg)](https://github.com/elodin-sys/ingenuity-elodin/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
 
-[Watch / download the demo](https://github.com/elodin-sys/Ingenuity-HITL/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
+[Watch / download the demo](https://github.com/elodin-sys/ingenuity-elodin/releases/download/flight59-web-control-demo/Ingenuity-Flight59-Web-Editor-EN-discord.mp4)
 — 3 min 52 s, English annotations, 9 MB.
 
 The Mac simulates a drone on Mars while a Raspberry Pi computes flight commands
@@ -109,7 +111,8 @@ The simulated sensors and camera are model outputs, not archived measurements.
 
 ### Run the closed loop
 
-From the repository root, with native `elodin` and `elodin-db` installed:
+Install native `elodin` and `elodin-db`; local SITL and Rust tests also require
+Rust/Cargo on the Mac. From the repository root:
 
 ```sh
 nix develop
@@ -212,7 +215,7 @@ Pi source CSV + incremental seeded 3-DOF campaign
 The tunnel maps Pi localhost:12250 to ground localhost:2250. The DB listens only
 on localhost. Replay timestamps are rebased to the current time; original source
 timestamps are preserved as channels. TCP replay is not a hard real-time test.
-The Pi application lives in `~/Ingenuity-HITL`; other Pi applications are untouched.
+The Pi deployment uses the historical directory `~/Ingenuity-HITL` for compatibility.
 
 Individual launcher stages are `ground.sh`, `sensors.sh`, `editor.sh`, and
 `pi_replay.sh` under `scripts/`. The Pi saves complete trajectory campaign results

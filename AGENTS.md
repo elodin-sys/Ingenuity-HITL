@@ -1,4 +1,4 @@
-# Ingenuity-HITL
+# ingenuity-elodin
 
 Independent application intended for an Elodin Systems repository. Use installed
 `elodin` and `elodin-db` binaries. Do not add a source/workspace dependency on the

@@ -1,7 +1,7 @@
 [project]
-name = "ingenuity-hitl"
+name = "ingenuity-elodin"
 version = "0.1.0"
-description = "Ingenuity telemetry replay and atmospheric model experiments using Elodin binaries"
+description = "Closed-loop Mars helicopter bench with Rust flight software and Elodin simulation"
 requires-python = ">=3.11"
 dependencies = []
 

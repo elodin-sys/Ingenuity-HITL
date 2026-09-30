@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Flight 59: interact with a Raspberry Pi flight controller connected to an Elodin simulation."><title>Ingenuity / Flight Control Lab</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header><a class="brand" href="https://github.com/elodin-sys/Ingenuity-HITL">ELODIN <span>/ INGENUITY HITL</span></a><div id="mode" class="badge">LOADING RECORDING</div></header>
+<header><a class="brand" href="https://github.com/elodin-sys/ingenuity-elodin">ELODIN <span>/ INGENUITY HITL</span></a><div id="mode" class="badge">LOADING RECORDING</div></header>
 <main>
 <section class="intro"><h1>Ingenuity · Flight 59</h1><p class="lede">16 September 2023 · Sol 915</p></section>
 <section class="signal-path" aria-label="Closed-loop architecture"><div id="node-sensor"><span>MAC<span>Simulated sensors</span></span></div><i aria-hidden="true">→</i><div id="node-fsw"><span>RASPBERRY PI<span>Rust flight software</span></span></div><i aria-hidden="true">→</i><div id="node-plant"><span>MAC / ELODIN<span>Actuators + physics</span></span></div><span class="return-path">↩ measurements from the next step</span><output id="rtt">— ms round trip</output></section>
@@ -23,5 +23,5 @@
 <div class="replay-controls"><button id="play" type="button" class="quiet">Pause replay</button><label for="seek">Recorded flight <output id="seek-label">0 s</output></label><input id="seek" type="range" min="0" max="153.66" step="0.1" value="0"></div>
 </aside></div>
 <details class="connection"><summary>Connect a bench</summary><form id="connection"><label for="endpoint">Relay URL (leave empty for this Raspberry Pi)</label><div><input id="endpoint" type="url" placeholder="https://your-bench.example"><button type="submit">Connect</button></div></form><p>The static GitHub Pages copy needs an HTTPS relay. The Raspberry Pi serves this same interface directly. No SSH or bridge credentials belong in this page.</p></details>
-<footer><p><strong>Demonstration flight software.</strong> Sensor and atmosphere models are approximations. NASA's archive does not include the exact ground endpoints. Replay controls never operate the bench.</p><a href="https://github.com/elodin-sys/Ingenuity-HITL/blob/main/docs/ARCHITECTURE.md">Architecture ↗</a></footer>
+<footer><p><strong>Demonstration flight software.</strong> Sensor and atmosphere models are approximations. NASA's archive does not include the exact ground endpoints. Replay controls never operate the bench.</p><a href="https://github.com/elodin-sys/ingenuity-elodin/blob/main/docs/ARCHITECTURE.md">Architecture ↗</a></footer>
 </main><script type="module" src="app.js"></script></body></html>

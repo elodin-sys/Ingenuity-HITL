@@ -2,7 +2,7 @@
 
 This is an independent application. It consumes Elodin binaries and speaks the
 native DB protocol; it does not import, link, or build the Elodin source tree.
-The publication target is the public `elodin-sys/Ingenuity-HITL` repository.
+The publication target is the public `elodin-sys/ingenuity-elodin` repository.
 
 Publication and maintenance notes:
 
