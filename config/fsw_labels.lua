@@ -1,0 +1,10 @@
+local client = connect(os.getenv("INGENUITY_DB_ADDR") or "127.0.0.1:2240")
+local messages = {}
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.elapsed"), name="mission.elapsed", metadata={element_names="Mission / s"}}))
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.height"), name="mission.height", metadata={element_names="SIM S2 / m"}}))
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.target"), name="mission.target", metadata={element_names="FSW target / m"}}))
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.gap"), name="mission.gap", metadata={element_names="NASA gap / m"}}))
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.phase"), name="mission.phase", metadata={element_names="FSW phase (0-4)"}}))
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.rpm"), name="mission.rpm", metadata={element_names="Rotor / RPM"}}))
+table.insert(messages, SetComponentMetadata({component_id=ComponentId("mission.collective"), name="mission.collective", metadata={element_names="Collective (0-1)"}}))
+client:send_msgs(messages)

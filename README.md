@@ -11,6 +11,28 @@ The default workshop demonstrates **Flight 59, sol 915, 16 September 2023**:
 one chase viewport, a simulated downward Navcam, cyan NASA trajectory, orange
 best-fit Monte Carlo trajectory, and numeric monitors underneath.
 
+## Closed-loop Flight 59 development
+
+A new mode now separates the Python Elodin plant in [`sim/`](sim/) from the
+Rust controller in [`controller/`](controller/). It keeps Flight 59 as its
+mission and NASA comparison reference. See the [architecture diagram](docs/ARCHITECTURE.md)
+and [run instructions and model limits](docs/CLOSED_LOOP.md).
+The original `workshop.sh` remains the archived replay mode described below.
+
+### Processing steps and where they run
+
+- **NASA reference — Mac:** load the measured Flight 59 trajectory, displayed in cyan.
+- **Physics simulation — Mac, [`sim/`](sim/):** simulate the helicopter, Martian atmosphere, motors, and ground contact with Elodin.
+- **Simulated sensors — Mac:** generate noisy altitude, attitude, and motion measurements, then send them to the Raspberry Pi.
+- **Flight software — Raspberry Pi, [`controller/`](controller/):** the Rust program estimates the helicopter's state, follows the Flight 59 mission targets, and computes flight commands.
+- **Command application — Mac:** apply the received commands to the simulated actuators, calculate the next vehicle state, and send new measurements back to the Pi. **This feedback loop runs throughout the flight.**
+- **Recording — Elodin DB on Mac:** record simulated states, commands, estimates, and the NASA reference.
+- **Visualization — Editor on Mac:** display the NASA trajectory in cyan, the Pi-controlled simulated trajectory in orange, their separation, spinning rotors, and the onboard camera view.
+- **Monte Carlo — Mac:** repeat flights while varying pressure, temperature, wind, and sensor noise, using the same Rust controller. Select the best result based on reference-trajectory error and landing criteria. **Live winner visualization in the Editor remains to be integrated into this new mode.**
+
+The Rust controller is demonstration flight software, not NASA's flight software.
+The simulated sensors and camera are model outputs, not archived measurements.
+
 ## Data and coverage
 
 **180 archived navigation states over 137.735 seconds** come from NASA's
@@ -38,7 +60,7 @@ not geographic ENU. Source quaternions, positions and clocks remain separate DB
 channels. The NASA GLB's IMU-to-body alignment is illustrative. No weather from
 another sol is substituted for Flight 59.
 
-## What the Editor shows
+## What the archive replay Editor shows
 
 - **Cyan:** original archived positions connected by straight segments. The
   helicopter moves using position interpolation and shortest-arc attitude SLERP.
@@ -60,7 +82,8 @@ another sol is substituted for Flight 59.
 See [visual interpretation](docs/VISUALS.md) and [model limitations](docs/MODEL.md).
 The Monte Carlo result is a conditional calibration on this same flight, not
 an independently validated flight-dynamics model or recovered historical weather.
-The Pi performs hardware replay; this is not closed-loop HITL validation.
+In archive replay mode, the Pi performs hardware replay; this is not closed-loop
+HITL validation. The separate closed-loop mode is described above.
 
 ## Run
 

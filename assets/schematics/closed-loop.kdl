@@ -1,0 +1,46 @@
+// Local Cartesian X-forward / Y-left / Z-up; not geographic ENU.
+coordinate frame="ENU"
+theme mode="dark"
+timeline range="full"
+telemetry_mode #true
+environment {
+    sun direction="(0.0709068347,0.0803703456,0.9942398244)" illuminance=60000 shadows=#true
+    ambient scale=0.3
+    sky color="(24,18,17)"
+}
+vsplit name="Flight 59 / Rust FSW / SIMULATION" {
+    hsplit share=0.84 {
+        viewport name="FLIGHT 59 · 16 SEP 2023 | CYAN NASA · ORANGE CLOSED-LOOP SIM" share=0.73 active=#true near=0.03 fov=43 hdr=#true ev100=13.5 show_grid=#false show_view_cube=#true pos="display.world_pos.translate_world(4.5,-5.5,3.5)" look_at="display.world_pos.translate_world(0,0,-1.3)" up="(0,0,1)" {
+            bloom preset="old_school" intensity=0.12 threshold=1.0
+        }
+        sensor_view "navcam.gray" name="NAVCAM · SIMULATED · 10 FPS" share=0.27
+    }
+    hsplit share=0.16 {
+        component_monitor component_name="mission.elapsed" name="MISSION TIME / s" share=0.18
+        component_monitor component_name="mission.height" name="SIM S2 HEIGHT / m" share=0.22
+        component_monitor component_name="mission.gap" name="NASA GAP / m" share=0.22
+        component_monitor component_name="mission.target" name="FSW TARGET / m" share=0.22
+        component_monitor component_name="mission.phase" name="FSW PHASE (0–4)" share=0.16
+        component_monitor component_name="mission.rpm" name="ROTOR / RPM" share=0.16
+    }
+}
+object_3d orientation=absolute sensor_visible=#true display.world_pos {
+    glb path="db:models/ingenuity_body.glb"
+}
+line_3d display.referencepose line_width=4.0 perspective=#false {
+    color 92 230 250
+    future_color 92 230 250 90
+}
+line_3d display.world_pos line_width=4.0 perspective=#false {
+    color 255 181 91
+    future_color 255 181 91 90
+}
+object_3d orientation=absolute "(0,0,0,1,0,0,-0.4)" {
+    glb path="db:models/mars_terrain.glb" { visibility_range max=30000; }
+}
+object_3d orientation=absolute "(0,0,0,1,0,0,0)" {
+    glb path="db:models/mars_flight59_terrain.glb" { visibility_range max=1000; }
+}
+
+object_3d orientation=absolute sensor_visible=#true display.toppose { glb path="db:models/ingenuity_rotor_0.glb"; }
+object_3d orientation=absolute sensor_visible=#true display.bottompose { glb path="db:models/ingenuity_rotor_1.glb"; }

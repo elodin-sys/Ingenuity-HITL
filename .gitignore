@@ -13,3 +13,5 @@ assets/schematics/selected.kdl
 
 # Prepared locally by scripts/prepare_assets.py
 assets/models/*.glb
+
+controller/target/

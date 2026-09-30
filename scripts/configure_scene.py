@@ -35,6 +35,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=2250)
+    parser.add_argument("--schematic", help="Override the selected schematic asset key")
     args = parser.parse_args()
     cameras = json.loads((ROOT / "config/cameras.json").read_text())
     selected = ROOT / "config/selection.json"
@@ -45,6 +46,8 @@ def main():
         for camera in cameras:
             camera["environment"]["sun"]["direction"] = direction
         schematic = "schematics/selected.kdl"
+    if args.schematic:
+        schematic = args.schematic
     metadata = {"sensor_cameras": json.dumps(cameras), "schematic.active": schematic}
     with socket.create_connection((args.host, args.port), timeout=10) as connection:
         connection.sendall(config_packet(metadata))
